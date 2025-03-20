@@ -1,0 +1,12 @@
+:root{
+    --main-bg: #6721E1;
+    --element-bg: #531BB6;
+
+    --green: #58BA5C;
+    --red: #FF0004;
+
+    --element-border: 0px 0px 0px 3px rgba(0, 0, 0, 0.28) inset;
+
+    --element-border-green: 0px 0px 0px 3px var(--green) inset;
+    --element-border-red: 0px 0px 0px 3px var(--red) inset;
+}

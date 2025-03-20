@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>L'impiccato | lucatruglia.it</title>
+</head>
+<body>
+    
+    <main>
+        <div id="start-menu" style="display: none;">
+            <div class="center">
+                <span class="title">L'impiccato</span>
+                <div class="buttons">
+                    <div class="btn">GIOCA ORA</div>
+                    <div class="multiple">
+                        <div class="btn activated" id="music-btn">Musica</div>
+                        <div class="btn activated" id="effect-btn">Effetti</div>
+                    </div>
+                </div>
+            </div>
+            <img src="src/assets/images/happy.webp" alt="" class="happy">
+            <img src="src/assets/images/rope.webp" alt="" class="rope"> 
+        </div>
+
+        <div id="game" style="display: none;">
+            <div class="top">
+                <span class="title">
+                    <img src="src/assets/images/planet.webp" alt="" class="planet">
+                    L'impiccato
+                </span>
+
+                <div class="indicators">
+                    <div class="card">
+                        <i class="fa-regular fa-clock icon"></i>
+                        <div class="content">0:30</div>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-circle-xmark icon"></i>
+                        <div class="content">0/5</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <div class="image-box"></div>
+                <div class="right">
+                    <div class="word-box">
+                        <span>G_______A</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="keyboard">
+                    <span class="key" id="letter-A">A</span><span class="key" id="letter-B">B</span><span class="key" id="letter-C">C</span><span class="key" id="letter-D">D</span><span class="key" id="letter-E">E</span><span class="key" id="letter-F">F</span><span class="key" id="letter-G">G</span><span class="key" id="letter-H">H</span><span class="key" id="letter-I">I</span><span class="key" id="letter-J">J</span><span class="key" id="letter-K">K</span><span class="key" id="letter-L">L</span><span class="key" id="letter-M">M</span><span class="key" id="letter-N">N</span><span class="key" id="letter-O">O</span><span class="key" id="letter-P">P</span><span class="key" id="letter-Q">Q</span><span class="key" id="letter-R">R</span><span class="key" id="letter-S">S</span><span class="key" id="letter-T">T</span><span class="key" id="letter-U">U</span><span class="key" id="letter-V">V</span><span class="key" id="letter-W">W</span><span class="key" id="letter-X">X</span><span class="key" id="letter-Y">Y</span><span class="key" id="letter-Z">Z</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<script src="src/scripts/class.js"></script>
+<script src="src/scripts/main.js"></script>
+</body>
+</html>
