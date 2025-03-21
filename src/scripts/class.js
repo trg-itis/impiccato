@@ -38,3 +38,65 @@ class PageManager{
         });
     }
 }
+
+
+class Game{
+    constructor(){
+        this.maxErrors = 5
+        this.errors = 0
+        this.word = ""
+        this.guessedLetters = []
+    }
+
+    checkLetter(letter){
+        for(let l of this.word){
+            if(l == letter){
+                this.guessedLetters.push(l)
+                return true
+            }
+        }
+        this.errors++
+        return false
+    }
+
+    
+
+    checkWin(){
+        if(this.errors >= this.maxErrors){
+            return null
+        }
+
+        let result = ""
+        for (let l of this.word) {
+            let toAppend = "_"
+            if (this.guessedLetters.includes(l)) {
+                toAppend = l
+            }
+            result+=toAppend
+        }
+
+        return result
+    }
+
+    setMaxErrors(amount){
+        this.maxErrors = amount
+    }
+
+    setWord(word){
+        this.word = word
+    }
+
+    getWord(){
+        return this.word
+    }
+
+    reset(){
+        this.maxErrors = 5
+        this.errors = 0
+        this.word = ""
+        this.guessedLetters = []
+    }
+}
+
+
+

@@ -29,6 +29,7 @@ main{
     box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, 0.103);
 
     overflow: hidden;
+    position: relative;
 }
 
 #start-menu{
@@ -224,6 +225,14 @@ main{
     height: 100%;
     background-color: var(--element-bg);
     border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game .game-content .image-box img{
+    width: 90%;
 }
 
 #game .game-content .right{
@@ -285,4 +294,67 @@ main{
 
 #game .game-content .keyboard .key:hover{
     transform: scale(1.05);
+}
+
+
+
+.key.deselected{
+    opacity: 0.4;
+}
+
+.popup-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.574);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup{
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--element-bg);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 30px 50px;
+
+    box-shadow: var(--element-border);
+}
+
+.popup.lose{
+    box-shadow: var(--element-border-red);
+}
+
+.popup.win{
+    box-shadow: var(--element-border-green);
+}
+
+
+.popup .title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.popup .subtitle{
+    font-size: 25px;
+}
+
+
+.popup .btn{
+    font-size: 20px;
+    height: 60px;
+    width: 460px;
+
+    cursor: pointer;
 }

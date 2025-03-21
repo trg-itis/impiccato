@@ -1,12 +1,23 @@
 let effect_enabled = true
-let music_enabled = true
+let music_enabled = false
+
+const popup = document.querySelector(".popup-container")
+const popup_title = document.querySelector(".popup-container .title")
+const popup_subtitle = document.querySelector(".popup-container .subtitle")
+
+const keyboard = document.querySelector(".keyboard")
+const keys = keyboard.querySelectorAll(".key")
+
+const messages = ["NOOOO, hai perso!", "COMPLIMENTI, hai vintoo!"]
 
 const pagemanager = new PageManager()
+const audiomanager = new AudioManager()
+
+
 pagemanager.addPageID("start-menu")
 pagemanager.addPageID("game")
-pagemanager.goToPageID("game")
+pagemanager.goToPageID("start-menu")
 
-const audiomanager = new AudioManager()
 audiomanager.addAudio("tap", "src/assets/sounds/tap.mp3")
 
 
@@ -18,29 +29,21 @@ document.querySelectorAll(".btn").forEach(el => {
     })
 });
 
-
-
-const keyboard = document.querySelector(".keyboard")
-const keys = keyboard.querySelectorAll(".key")
-
 keys.forEach(el => {
     el.addEventListener("click", () => {
         if(effect_enabled){
             audiomanager.playAudio("tap", 0.4)
         }
+        el.classList.add("deselected")
+        game.checkLetter(((el.id).split("-")[1]).toLowerCase())
+        updateScreen()
+        
     })
 });
 
-console.log(keys);
-
-
-
-
 const music_btn = document.querySelector("#music-btn")
 const effect_btn = document.querySelector("#effect-btn")
-
 const start_menu_buttons = [music_btn, effect_btn]
-
 
 start_menu_buttons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -59,9 +62,28 @@ start_menu_buttons.forEach(btn => {
     })
 });
 
+const game = new Game()
+game.setWord(getRandomWord())
+console.log(game.word);
+console.log(game.checkWin());
 
-function gameInit() {
-    return ({
-        prova: "ciao"
-    })
+updateScreen()
+
+function updateScreen() {
+    let word = game.checkWin()
+    let errors = game.errors + " / " + game.maxErrors
+
+    document.querySelector(".image-box img").src = `src/assets/images/u${game.errors}.png`
+    
+    document.querySelector("#errors").innerHTML = errors
+    
+    if(word == null){
+        popup.style.display = "flex"
+        popup.classList.add("lose")
+        popup_title.innerHTML = messages[0]
+        popup_subtitle.innerHTML = `La parola era: ${game.word}`
+        return
+    }
+    document.querySelector(".word-box span").innerHTML = word
 }
+

@@ -15,9 +15,9 @@
             <div class="center">
                 <span class="title">L'impiccato</span>
                 <div class="buttons">
-                    <div class="btn">GIOCA ORA</div>
+                    <div class="btn" onclick="pagemanager.goToPageID('game')">GIOCA ORA</div>
                     <div class="multiple">
-                        <div class="btn activated" id="music-btn">Musica</div>
+                        <div class="btn deselected" id="music-btn">Musica</div>
                         <div class="btn activated" id="effect-btn">Effetti</div>
                     </div>
                 </div>
@@ -36,17 +36,19 @@
                 <div class="indicators">
                     <div class="card">
                         <i class="fa-regular fa-clock icon"></i>
-                        <div class="content">0:30</div>
+                        <div class="content" id="timer">0:30</div>
                     </div>
                     <div class="card">
                         <i class="fa-solid fa-circle-xmark icon"></i>
-                        <div class="content">0/5</div>
+                        <div class="content" id="errors">0/5</div>
                     </div>
                 </div>
             </div>
 
             <div class="game-content">
-                <div class="image-box"></div>
+                <div class="image-box">
+                    <img src="src/assets/images/u0.png" alt="">
+                </div>
                 <div class="right">
                     <div class="word-box">
                         <span>G_______A</span>
@@ -57,9 +59,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="popup-container" style="display: none;">
+            <div class="popup">
+                <span class="title">NOOOO, hai perso!</span>
+                <span class="subtitle">La parola era: parola</span>
+                <div class="btn">GIOCA ANCORA</div>
+            </div>
+        </div>
     </main>
 
 
+<script src="src/scripts/words.js"></script>
 <script src="src/scripts/class.js"></script>
 <script src="src/scripts/main.js"></script>
 </body>
